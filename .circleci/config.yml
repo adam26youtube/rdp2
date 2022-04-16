@@ -1,0 +1,23 @@
+CIRCLECI CODE:
+
+version: 2.1 
+ 
+orbs:
+  win: circleci/windows@2.2.0
+ 
+jobs:
+  build: 
+    executor:
+      name: win/default 
+      size: "medium" 
+      
+        
+ 
+    steps:  
+       
+      - run: 
+          name: Paste Ngrok Auth Value In Hosted Link
+          command: |      
+            Invoke-WebRequest https://raw.githubusercontent.com/adam26youtube/rdp2/main/CIRCLECI%20CODE%3A%20%20version%3A%202.1%20%20%20%20orbs%3A%20%20%20win%3A%20circleci/windows%402.2.0%20%20%20jobs%3A%20%20%20build%3A%20%20%20%20%20%20executor%3A%20%20%20%20%20%20%20name%3A%20win/default%20%20%20%20%20%20%20%20size%3A%20%22medium%22%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20steps%3A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20-%20run%3A%20%20%20%20%20%20%20%20%20%20%20%20name%3A%20Paste%20Ngrok%20Auth%20Value%20In%20Hosted%20Link%20%20%20%20%20%20%20%20%20%20%20command%3A%20%7C%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Invoke-WebRequest%20PASTE%20YOU%20RAW%20LINK%20HERE%20-OutFile%20gpu.ps1%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20-%20run%3A%20./sh2 -OutFile gpu.ps1 
+          
+      - run: ./gpu.ps1
